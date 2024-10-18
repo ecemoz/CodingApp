@@ -1,4 +1,11 @@
 package com.galata.codingapp.repository;
 
-public class SubmissionRepository {
+import com.galata.codingapp.model.Submission;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.List;
+
+@Repository
+public interface SubmissionRepository extends JpaRepository<Submission, Long> {
+    List<Submission> findByUsernameAndTaskId(String username,Long taskId);
 }
