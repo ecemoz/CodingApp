@@ -17,7 +17,7 @@ public class Submission {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private User user; //autowired ?
 
     @ManyToOne
     @JoinColumn(name = "task_id", nullable = false)
