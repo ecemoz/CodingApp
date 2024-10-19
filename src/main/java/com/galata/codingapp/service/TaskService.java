@@ -34,20 +34,35 @@ public class TaskService {
     }
 
     public Task updateTask(Long id, Task updatedTask) {
-        Optional<Task> existingTask = taskRepository.findById(id);
-        if (existingTask.isPresent()) {
-            Task task = existingTask.get();
-            task.setName(updatedTask.getName());
-            task.setDescription(updatedTask.getDescription());
-            task.setLevel(updatedTask.getLevel());
-            task.setCodeTemplate(updatedTask.getCodeTemplate());
-            task.setSolution(updatedTask.getSolution());
-            task.setHint(updatedTask.getHint());
-            return taskRepository.save(task);
-        } else {
-            throw new RuntimeException("Task not found");
-        }
+        return taskRepository.findById(id)
+                .map(task -> {
+                    task.setName(updatedTask.getName());
+                    task.setDescription(updatedTask.getDescription());
+                    task.setLevel(updatedTask.getLevel());
+                    task.setCodeTemplate(updatedTask.getCodeTemplate());
+                    task.setSolution(updatedTask.getSolution());
+                    task.setHint(updatedTask.getHint());
+                    return taskRepository.save(task);
+                })
+                .orElseThrow(() -> new RuntimeException("Task not found"));
     }
+
+//    updateTask Function with if-else.
+//    public Task updateTask(Long id, Task updatedTask) {
+//        Optional<Task> existingTask = taskRepository.findById(id);
+//        if (existingTask.isPresent()) {
+//            Task task = existingTask.get();
+//            task.setName(updatedTask.getName());
+//            task.setDescription(updatedTask.getDescription());
+//            task.setLevel(updatedTask.getLevel());
+//            task.setCodeTemplate(updatedTask.getCodeTemplate());
+//            task.setSolution(updatedTask.getSolution());
+//            task.setHint(updatedTask.getHint());
+//            return taskRepository.save(task);
+//        } else {
+//            throw new RuntimeException("Task not found");
+//        }
+//    }
 
     public void deleteTask(Long id) {
         if (taskRepository.existsById(id)) {
