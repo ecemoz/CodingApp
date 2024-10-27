@@ -21,8 +21,8 @@ public class SubmissionService {
         return submissionRepository.findById(id);
     }
 
-    public List<Submission> getSubmissionsByUsernameAndTaskId(String username, Long taskId) {
-        return submissionRepository.findByUsernameAndTaskId(username, taskId);
+    public List<Submission> getSubmissionsByUsernameAndTaskId(String username, Long id) {
+        return submissionRepository.findByUser_UsernameAndTask_Id(username, id);
     }
 
     public Submission createSubmission(Submission submission) {

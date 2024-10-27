@@ -35,7 +35,7 @@ public class UserService {
                 .map(user -> {
                         user.setUsername(updatedUser.getUsername());
                         user.setEmail(updatedUser.getEmail());
-                        user.setPassword(updatedUser.getPassword());
+                        user.setPassword(passwordEncoder.encode(updatedUser.getPassword()));
                         user.setScore(updatedUser.getScore());
                         user.setLevel(updatedUser.getLevel());
                         return userRepository.save(user);

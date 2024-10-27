@@ -22,7 +22,7 @@ public class TaskService {
     }
 
     public List<Task> getTasksByName(String name) {
-        return taskRepository.findByTaskName(name);
+        return taskRepository.findByName(name);
     }
 
     public List<Task> getTasksByCategory(String category) {

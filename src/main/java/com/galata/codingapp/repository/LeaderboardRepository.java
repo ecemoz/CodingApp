@@ -8,5 +8,5 @@ import java.util.List;
 @Repository
 public interface LeaderboardRepository extends JpaRepository<Leaderboard, Long> {
     List<Leaderboard> findAllByOrderByScoreDesc();
-    Leaderboard findByUsername(String username);
+    Leaderboard findByUser_Username(String username);
 }

@@ -17,7 +17,7 @@ public class LeaderboardService {
     }
 
     public Leaderboard getLeaderboardByUsername(String username) {
-        return leaderboardRepository.findByUsername(username);
+        return leaderboardRepository.findByUser_Username(username);
     }
 
     public Leaderboard createLeaderboardEntry(Leaderboard leaderboard) {

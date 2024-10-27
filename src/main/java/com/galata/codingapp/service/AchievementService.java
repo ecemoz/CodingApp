@@ -22,11 +22,11 @@ public class AchievementService {
     }
 
     public List<Achievement> getAchievementByUsername(String username) {
-        return achievementRepository.findByUsername(username);
+        return achievementRepository.findByUsers_Username(username);
     }
 
     public List<Achievement> getAchievementByUserId(Long id) {
-        return achievementRepository.findByUserId(id);
+        return achievementRepository.findByUsers_Id(id);
     }
 
     public Achievement createAchievement(Achievement achievement) {

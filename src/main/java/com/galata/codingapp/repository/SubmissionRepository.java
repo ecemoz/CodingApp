@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface SubmissionRepository extends JpaRepository<Submission, Long> {
-    List<Submission> findByUsernameAndTaskId(String username,Long taskId);
+    List<Submission> findByUser_UsernameAndTask_Id(String username,Long id);
 }
