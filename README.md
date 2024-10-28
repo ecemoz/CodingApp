@@ -56,7 +56,7 @@ This project is a Spring Boot backend application designed to teach users coding
    ```
 
 4. **Access the Application**:
-   - The server should start on `http://localhost:8080`.
+   - The server should start on `http://localhost:3000`.
 
 ## Project Structure
 
