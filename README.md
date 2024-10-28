@@ -51,8 +51,8 @@ This project is a Spring Boot backend application designed to teach users coding
 
 3. **Build and Run the Application**:
    ```bash
-   ./mvnw clean install
-   ./mvnw spring-boot:run
+   ./gradlew clean build
+   ./gradlew bootRun
    ```
 
 4. **Access the Application**:
